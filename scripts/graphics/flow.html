@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+:root{--navy:#202332;--screen:#2e3346;--slate:#434e60;--mist:#8b9a9f;--sand:#bc9876;--text:#e9e6e0;--ink:#171523;--ok:#9fd3a8;--bad:#e8a5a5}
+*{box-sizing:border-box;margin:0}
+body{width:1500px;height:490px;font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--text);padding:44px 50px;
+ background:linear-gradient(160deg,#2e3346 0%,#202332 70%)}
+h2{font-size:30px;font-weight:800;color:var(--mist);letter-spacing:-.02em}
+.sub{color:var(--mist);margin-top:6px;font-size:17px}
+.row{display:flex;align-items:stretch;gap:0;margin-top:34px}
+.step{flex:1;background:var(--screen);border-radius:24px;padding:22px 20px;box-shadow:5px 5px 12px rgba(9,10,18,.5),-3px -3px 9px rgba(80,90,118,.14);min-height:190px}
+.step .n{width:34px;height:34px;border-radius:50%;background:var(--slate);color:var(--sand);font-weight:800;display:grid;place-items:center;margin-bottom:14px}
+.step h3{font-size:19px;margin-bottom:8px}
+.step p{font-size:15px;color:var(--mist);line-height:1.45}
+.step.key{background:var(--sand);color:var(--ink)}
+.step.key .n{background:var(--ink);color:var(--sand)}
+.step.key p{color:#3a2d22}
+.arrow{width:38px;flex:none;display:grid;place-items:center;color:var(--sand);font-size:26px}
+.out{display:flex;gap:18px;margin-top:26px;margin-left:calc(80% - 150px)}
+.res{flex:1;border-radius:18px;padding:14px 18px;font-size:15px;line-height:1.4;border:1.5px solid}
+.res.ok{border-color:var(--ok);color:var(--ok)}
+.res.no{border-color:var(--sand);color:var(--sand)}
+.res b{display:block;font-size:17px;margin-bottom:4px;color:var(--text)}
+</style></head><body>
+<h2>How SoFar keeps you spoiler free</h2>
+<p class="sub">Every question goes through the same steps, in this order.</p>
+<div class="row">
+ <div class="step"><div class="n">1</div><h3>You press send</h3><p>SoFar reads your playback time at that exact moment.</p></div>
+ <div class="arrow">→</div>
+ <div class="step key"><div class="n">2</div><h3>Cut at your time</h3><p>Only subtitle lines you have already seen are kept. Future lines never leave the extension.</p></div>
+ <div class="arrow">→</div>
+ <div class="step"><div class="n">3</div><h3>Extra facts</h3><p>Cast from TMDB and a filtered web search for real world facts and background. Plot is stripped out.</p></div>
+ <div class="arrow">→</div>
+ <div class="step"><div class="n">4</div><h3>AI drafts an answer</h3><p>Gemini or Groq, told to use only what has been shown so far.</p></div>
+ <div class="arrow">→</div>
+ <div class="step key"><div class="n">5</div><h3>Spoiler check</h3><p>A second AI call reviews the draft against what you have seen.</p></div>
+</div>
+<div class="out">
+ <div class="res ok"><b>Safe</b>The answer is shown.</div>
+ <div class="res no"><b>Unsafe</b>One retry, then "We don't know that yet."</div>
+</div>
+</body></html>

@@ -1,0 +1,23 @@
+/* Only for the hero picture. */
+.hero { min-height: 100vh; display: grid; place-items: center; padding: 40px;
+  background: radial-gradient(circle at 20% 10%, #3a4058, #171523 70%); }
+.window { width: 1240px; border-radius: 18px; overflow: hidden; background: #202332;
+  box-shadow: 0 40px 90px rgba(0,0,0,.6); border: 1px solid #343a50; }
+.titlebar { height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 16px; background: #171523; color: #8b9a9f; font-size: 13px; }
+.titlebar i { width: 12px; height: 12px; border-radius: 50%; background: #434e60; display: inline-block; }
+.titlebar span { margin-left: 14px; background: #2e3346; padding: 5px 16px; border-radius: 999px; }
+.body { display: grid; grid-template-columns: 1fr 400px; height: 720px; }
+.player { position: relative; overflow: hidden; background: #0d0c14; }
+.sky { position: absolute; inset: 0;
+  background:
+    radial-gradient(2px 2px at 12% 18%, #d6b898, transparent), radial-gradient(2px 2px at 30% 40%, #bc9876, transparent),
+    radial-gradient(3px 3px at 62% 22%, #d6b898, transparent), radial-gradient(2px 2px at 80% 55%, #8b9a9f, transparent),
+    radial-gradient(2px 2px at 48% 70%, #bc9876, transparent), radial-gradient(2px 2px at 90% 12%, #d6b898, transparent),
+    linear-gradient(180deg, #1b2038 0%, #3a3550 55%, #7a5f50 100%); }
+.subtitle { position: absolute; left: 0; right: 0; bottom: 110px; text-align: center; color: #fff;
+  font-size: 26px; text-shadow: 0 2px 8px #000; }
+.controls { position: absolute; left: 28px; right: 28px; bottom: 34px; display: flex; align-items: center; gap: 14px; color: #e9e6e0; font-size: 13px; }
+.bar { flex: 1; height: 5px; background: #434e60; border-radius: 5px; }
+.fill { width: 45%; height: 100%; background: #bc9876; border-radius: 5px; }
+.panel { height: 720px; border-left: 1px solid #343a50; }
+.panel .chat { height: 100%; }
