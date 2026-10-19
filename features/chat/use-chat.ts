@@ -19,9 +19,9 @@ export type UiMessage = {
 };
 
 export const STAGE_LABELS: Record<Stage, string> = {
-  answering: 'Thinking...',
-  checking: 'Checking for spoilers...',
-  retrying: 'Trying again to be safe...',
+  answering: 'Thinking',
+  checking: 'Checking for spoilers',
+  retrying: 'Trying again to be safe',
 };
 
 // Chat state for the side panel. resetKey changes when the viewer opens a new title.

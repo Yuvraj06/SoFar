@@ -1,0 +1,38 @@
+/* SoFar look: deep navy, sand accents, soft raised shapes. Palette from the "twinkle" reference. */
+:root {
+  --navy: #202332;
+  --screen: #2e3346;
+  --slate: #434e60;
+  --mist: #8b9a9f;
+  --sand: #bc9876;
+  --sand-soft: #d6b898;
+  --ink: #171523;
+  --text: #e9e6e0;
+  --ok: #9fd3a8;
+  --bad: #e8a5a5;
+  --radius: 20px;
+  --raised: 5px 5px 12px rgba(9, 10, 18, 0.5), -3px -3px 9px rgba(80, 90, 118, 0.14);
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+html,
+body {
+  margin: 0;
+  background: var(--navy);
+  color: var(--text);
+  font-family: var(--font);
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+::selection {
+  background: var(--sand);
+  color: var(--ink);
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--slate);
+  border-radius: 8px;
+}

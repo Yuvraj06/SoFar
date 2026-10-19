@@ -1,23 +1,164 @@
-.settings { font-family: system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 24px; color: #1f2430; }
-.settings h1 { margin-top: 0; }
-.modes { display: flex; flex-direction: column; gap: 6px; margin: 12px 0 16px; }
-.tag { font-size: 0.7em; font-weight: 500; background: #4f46e5; color: #fff; border-radius: 10px; padding: 2px 8px; }
-.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media (max-width: 560px) { .cards { grid-template-columns: 1fr; } }
-.card { border: 2px solid #d5d9e2; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
-.card.active { border-color: #4f46e5; background: #f5f4ff; }
-.card-head { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 1.1em; }
-.card label.field { display: flex; flex-direction: column; gap: 4px; font-size: 0.85em; color: #555; }
-.settings input[type='password'], .settings input[type='text'] { padding: 8px; border: 1px solid #c3c8d4; border-radius: 6px; font-size: 1em; }
-.row { display: flex; align-items: center; gap: 10px; }
-.status.ok { color: #15803d; }
-.status.bad { color: #b91c1c; }
-.status.wait { color: #666; }
-.settings button { padding: 8px 14px; border-radius: 6px; border: 1px solid #4f46e5; background: #fff; color: #4f46e5; cursor: pointer; }
-.settings button.primary { background: #4f46e5; color: #fff; }
-.settings button:disabled { opacity: 0.5; cursor: default; }
-.extra { margin-top: 20px; }
-.hint { font-size: 0.8em; color: #666; }
-.hint a { color: #4f46e5; }
-.actions { margin-top: 24px; display: flex; align-items: center; gap: 12px; }
-.banner { background: #fff7e0; border: 1px solid #f0d58c; border-radius: 8px; padding: 10px; margin-bottom: 12px; }
+.settings {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  color: var(--text);
+}
+.settings h1 {
+  margin: 0 0 4px;
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--mist);
+}
+.hint {
+  font-size: 0.82em;
+  color: var(--mist);
+}
+.hint a,
+a.hint {
+  color: var(--sand);
+}
+
+/* mode picker */
+.modes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 18px 0 20px;
+  padding: 16px 18px;
+  background: var(--screen);
+  border-radius: var(--radius);
+  box-shadow: var(--raised);
+}
+.settings input[type='radio'],
+.settings input[type='checkbox'] {
+  accent-color: var(--sand);
+}
+
+/* cards */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+@media (max-width: 560px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+.card {
+  background: var(--screen);
+  border: 2px solid transparent;
+  border-radius: 24px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--raised);
+}
+.card.active {
+  border-color: var(--sand);
+}
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+.tag {
+  font-size: 0.65em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--sand);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+.card label.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.8em;
+  color: var(--mist);
+}
+.settings input[type='password'],
+.settings input[type='text'] {
+  padding: 11px 14px;
+  border: none;
+  border-radius: 14px;
+  background: var(--slate);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+  box-shadow: inset 3px 3px 8px rgba(9, 10, 18, 0.35);
+}
+.settings input[type='password']:focus,
+.settings input[type='text']:focus {
+  outline: 2px solid var(--sand);
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.extra {
+  margin-top: 20px;
+}
+
+/* status text */
+.status.ok { color: var(--ok); }
+.status.bad { color: var(--bad); }
+.status.wait { color: var(--mist); }
+
+/* buttons */
+.settings button {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--sand);
+  background: transparent;
+  color: var(--sand);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.settings button:hover:not(:disabled) {
+  background: rgba(188, 152, 118, 0.15);
+}
+.settings button.primary {
+  background: var(--sand);
+  color: var(--ink);
+  box-shadow: var(--raised);
+}
+.settings button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.actions {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* the "add your key" box in the side panel */
+.banner {
+  background: var(--screen);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--raised);
+  font-size: 0.9em;
+}
+.banner button {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  background: var(--sand);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}

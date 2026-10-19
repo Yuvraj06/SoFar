@@ -50,14 +50,23 @@ export function ChatView() {
           <div className="chat-sub">{statusLine(status)}</div>
         </div>
         <button type="button" className="gear" title="Settings" aria-label="Open settings" onClick={openSettings}>
-          ⚙
+          ⚙︎
         </button>
       </div>
 
       <div className="chat-list">
         <SetupBanner />
         {messages.length === 0 && (
-          <p className="chat-empty">Ask anything about what you have watched so far. I will not spoil the rest.</p>
+          <div className="chat-empty">
+            <span className="star">✦</span>
+            <span className="star">✦</span>
+            <span className="star">✦</span>
+            <span className="star">✦</span>
+            <span className="star">✦</span>
+            Ask anything about what you have watched so far.
+            <br />
+            I will not spoil the rest.
+          </div>
         )}
         {messages.map((m) => (
           <div key={m.id} className={`bubble ${m.role} ${m.kind ?? ''}`}>
@@ -89,8 +98,8 @@ export function ChatView() {
             }
           }}
         />
-        <button type="button" onClick={submit} disabled={!canSend}>
-          Send
+        <button type="button" onClick={submit} disabled={!canSend} aria-label="Send" title="Send">
+          →
         </button>
       </div>
     </div>
