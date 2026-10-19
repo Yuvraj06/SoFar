@@ -151,3 +151,6 @@ vite.config.ts.timestamp-*
 # WXT
 .wxt
 web-ext.config.ts
+
+# Local assistant instructions
+CLAUDE.md
